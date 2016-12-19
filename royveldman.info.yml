@@ -1,0 +1,21 @@
+name: RoyVeldman
+type: theme
+description: 'Theme for RoyVeldman.com'
+version: '6.0'
+core: '8.x'
+
+libraries:
+  - royveldman/global-styling
+
+regions:
+  header: Header
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  breadcrumb: Breadcrumb
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
