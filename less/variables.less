@@ -1,0 +1,36 @@
+@primary:       #5a3172;
+@secondary:     #453625;
+
+@white:         #FFFFFF;
+@grey-lightest: #EEEEEE;
+@grey-light:    #DDDDDD;
+@grey:          #CCCCCC;
+@grey-dark:     #666666;
+@grey-darkest:  #333333;
+@black:         #000000;
+
+@fs: 16; /* font-size in pixels */
+@lh: 30; /* line-height in pixels */
+
+@border-radius-large: 10px;
+@border-radius-small: 5px;
+
+// Media query variables.
+@phone-width:    (320em  / @fs);
+@phone-ls-width: (620em  / @fs);
+@tablet-width:   (700em  / @fs);
+@tablet-ls-width:(860em  / @fs);
+@normal-width:   (980em  / @fs);
+@wide-width:     (1200em / @fs); 
+@phone:    ~"screen and (min-width: @{phone-width} )";
+@phone-ls: ~"screen and (min-width: @{phone-ls-width} )";
+@tablet:   ~"screen and (min-width: @{tablet-width} )";
+@tablet-ls:~"screen and (min-width: @{tablet-ls-width} )";
+@normal:   ~"screen and (min-width: @{normal-width} )";
+@wide:     ~"screen and (min-width: @{wide-width})";
+
+.border-radius(@radius: @border-radius-small) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
