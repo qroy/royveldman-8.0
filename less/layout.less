@@ -1,20 +1,33 @@
 body {
   background: @grey-lightest;
+  min-width: @phone-width;
 }
 .layout-container {
   font-size: @fs/16em;
   line-height: @lh/@fs+0em; /* 24px / 16px */
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1200em / @fs;
 }
 .region-header {
-  margin: 100px 0;
+  margin: 100em / @fs 0 200em / @fs;
   text-align: center;
 }
 .site-name {
-  font-size: 3em;
+  font-size: 2em;
+  @media @phone-ls {
+    font-size: 2.8em;
+  }
+  @media @tablet {
+    font-size: 4em;
+  }
+  @media @tablet-ls {
+    font-size: 5em;
+  }
   @media @normal {
     font-size: 6em;
+  }
+  @media @wide {
+    font-size: 7em;
   }
   font-weight: 700;
   display: inline-block;
@@ -25,8 +38,7 @@ body {
       color: @white;
     }
     &:hover, &:active {
-      color: @secondary;
-      #long-shadow.inline(@grey, 45, 50);
+      color: @primary;
     }
   }
   &:after {
@@ -44,13 +56,36 @@ body {
     li {
       display: inline-block;
       a {
+        font-size: 60em / @fs;
+        width: 100em / 60;
+        height: 100em / 60;
+        line-height: 100em / 60;
+        &:link, &:visited {
+          #long-shadow.inline(@grey, 45, 100);
+          background: @white;
+        }
+        &:active, &:hover {
+          #long-shadow.inline(@grey-darkest, 45, 100);
+          background: @primary;
+          color: @white;
+        }
         display: inline-block;
-        width: 150px;
-        height: 150px;
-        line-height: 150px;
         text-align: center;
-        background: @grey;
-        .border-radius();
+        .border-radius(@border-radius-large);
+        text-indent: 200%;
+        white-space: nowrap;
+        overflow: hidden;
+        position: relative; /* for absolute positioning of icon */
+        &:before {
+          text-indent: 0;
+          position: absolute;
+          left: 0;
+          right: 0;
+          text-align: center;
+          margin: 0;
+          display: inline;
+          width: auto;
+        }
       }
     }
   }
