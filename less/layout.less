@@ -4,34 +4,34 @@ body {
 }
 .layout-container {
   font-size: @fs/16em;
-  line-height: @lh/@fs+0em; /* 24px / 16px */
+  line-height: @lh/@fs+0em;
   margin: 0 auto;
   max-width: 1200em / @fs;
 }
 .region-header {
-  margin: 100em / @fs 0 200em / @fs;
+  font-size: 32em / @fs;
+  @media @phone-ls {
+    font-size: 44em / @fs;
+  }
+  @media @tablet {
+    font-size: 64em / @fs;
+  }
+  @media @tablet-ls {
+    font-size: 80em / @fs;
+  }
+  @media @normal {
+    font-size: 96em / @fs;
+  }
+  @media @wide {
+    font-size: 112em / @fs;
+  }
+  margin: 50em / 32 0 80em / 32;
   text-align: center;
 }
 .site-name {
-  font-size: 2em;
-  @media @phone-ls {
-    font-size: 2.8em;
-  }
-  @media @tablet {
-    font-size: 4em;
-  }
-  @media @tablet-ls {
-    font-size: 5em;
-  }
-  @media @normal {
-    font-size: 6em;
-  }
-  @media @wide {
-    font-size: 7em;
-  }
-  font-weight: 700;
+  font-weight: 900;
   display: inline-block;
-  #long-shadow.inline(@grey, 45, 100);
+  #long-shadow.inline(@grey, 45, 80);
   a {
     &:link, &:visited {
       text-decoration: none;
@@ -43,23 +43,39 @@ body {
   }
   &:after {
     content: '.com';
-    font-size: 0.5em;
+    font-size: 16em / 32;
+    letter-spacing: 1em / 16;
     color: @primary;
-    #long-shadow.inline(@grey, 45, 50);
-    margin-left: -0.5em;
+    #long-shadow.inline(@grey, 45, 30);
+    margin-left: -5em / 16;
   }
   
 }
 #block-social {
   ul {
     text-align: center;
+    margin: 0;
+    padding: 0;
     li {
       display: inline-block;
+      vertical-align: bottom;
+      margin: 0;
+      padding: 0;
       a {
-        font-size: 60em / @fs;
-        width: 100em / 60;
-        height: 100em / 60;
-        line-height: 100em / 60;
+        font-size: 36em / @fs;
+        @media @phone-ls {
+          margin: 0 5em / 36;
+        }
+        @media @tablet {
+          font-size: 50em / @fs;
+        }
+        @media @normal {
+          font-size: 60em / @fs;
+        }
+        width: 64em / 36;
+        height: 64em / 36;
+        line-height: 64em / 36;
+        .border-radius(10em / 36);
         &:link, &:visited {
           #long-shadow.inline(@grey, 45, 100);
           background: @white;
@@ -70,8 +86,8 @@ body {
           color: @white;
         }
         display: inline-block;
+        vertical-align: bottom;
         text-align: center;
-        .border-radius(@border-radius-large);
         text-indent: 200%;
         white-space: nowrap;
         overflow: hidden;
